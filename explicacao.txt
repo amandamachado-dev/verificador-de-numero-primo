@@ -1,0 +1,83 @@
+
+
+>>>>> Uma explicação da lógica de programação utilizada no código, usando bullet points para destacar os principais pontos:
+
+Estrutura Básica da Página:
+
+O JavaScript é incorporado na página para adicionar funcionalidade.
+Duas funções principais são definidas: isPrimo e verificarPrimo.
+Função isPrimo (Verificação de Número Primo):
+
+A função isPrimo verifica se um número é primo ou não.
+Ela recebe um número como argumento e utiliza um loop para verificar se ele é divisível por outros números.
+Se o número for menor ou igual a 1, a função retorna false.
+Caso contrário, ela verifica se o número é divisível por qualquer número entre 2 e o próprio número (exclusivo).
+Se for divisível por algum número, a função retorna false. Caso contrário, retorna true.
+Função verificarPrimo (Manuseio de Entrada do Usuário):
+
+A função verificarPrimo é chamada quando o botão "Verificar" é clicado.
+Ela obtém o valor digitado pelo usuário no campo de entrada de texto.
+Converte esse valor em um número inteiro usando parseInt.
+Verifica se o valor é um número (não é NaN) e exibe uma mensagem de erro se não for válido.
+Se o valor for válido, chama a função isPrimo para verificar se é primo.
+Exibe o resultado na página de acordo com o retorno da função isPrimo.
+Feedback ao Usuário:
+
+O código fornece feedback claro ao usuário, exibindo mensagens como "Digite um número válido" ou "é um número primo" com base na entrada e no cálculo.
+Interação com a Página:
+
+A interação ocorre quando o usuário insere um número e clica no botão "Verificar".
+O resultado é exibido na página, proporcionando uma experiência interativa ao usuário.
+Essa é a lógica de programação utilizada no código para criar uma página da web que verifica se um número é primo ou não.
+
+xxxxxxxxxxxxxxxxxxxxxx
+
+>>>>> Vou explicar detalhadamente a parte do código que envolve as funções isPrimo e a lógica de usar return false ou true.
+
+javascript
+Copy code
+function isPrimo(numero) {
+    if (numero <= 1) {
+        return false;
+    }
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+Aqui está a lógica por trás da função isPrimo:
+
+Receber um Número: A função isPrimo recebe um número como argumento, que chamamos de numero. Esta função é projetada para determinar se esse número é primo ou não.
+
+Verificação Inicial: A primeira coisa que a função faz é verificar se o número é menor ou igual a 1, usando a condição if (numero <= 1). Se o número for menor ou igual a 1, a função imediatamente retorna false. Por quê?
+
+Números menores ou iguais a 1 não podem ser primos, pois um número primo é definido como um número inteiro maior que 1 que é divisível apenas por 1 e por ele mesmo.
+Loop de Verificação de Divisibilidade: Se o número não for menor ou igual a 1, a função entra em um loop for. O loop começa com let i = 2 e verifica se i é menor que numero. Isso significa que o loop irá executar repetidamente a verificação para cada número de i começando em 2 até um número imediatamente antes de numero.
+
+Verificação de Divisibilidade: Dentro do loop, a função verifica se o numero é divisível por i usando a condição if (numero % i === 0). Se essa condição for verdadeira, significa que o número numero é divisível por i, e isso é um sinal de que ele não é primo. Nesse caso, a função imediatamente retorna false.
+
+Retorno de Verdadeiro: Se o loop inteiro for executado e nenhum número entre 2 e numero - 1 for encontrado para o qual numero seja divisível, a função chega à linha return true;. Isso significa que o número numero não é divisível por nenhum número (além de 1 e ele mesmo), o que é a definição de um número primo. Portanto, a função retorna true, indicando que o número é primo.
+
+Em resumo, a função isPrimo retorna false se o número for menor ou igual a 1 ou se ele for divisível por qualquer número entre 2 e o número em si (exclusivo). Caso contrário, ela retorna true para indicar que o número é primo. Essa lógica é usada para verificar se um número é primo ou não na página da web que você criou.
+
+xxxxxxxxxxxxxxxxxxxxxx
+
+>>>>>>>> Converter o Valor de Entrada em Número Inteiro:
+
+const numero = parseInt(input.value);: Aqui, estamos pegando o valor que o usuário digitou no campo de entrada de texto (input.value) e usando a função parseInt para convertê-lo em um número inteiro (numero). 
+Isso é importante porque o valor digitado pelo usuário é inicialmente tratado como uma sequência de caracteres (texto), e queremos realizar operações numéricas com ele.
+
+
+
+
+
+
+
+
+
+
+
+
+

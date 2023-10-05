@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Números Primos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #272626;
+        }
+        #container {
+            color: aliceblue;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            background-color: #3d3c3c;
+        }
+
+        button {
+            background-color: rgb(134, 5, 113);
+            color: #ccc;
+            border: none;
+            border-radius: 10%;
+            padding: 5px;
+            letter-spacing: 3px;
+            
+            
+        }
+
+        button:hover {
+            border: 1px solid rgb(235, 14, 205);
+            color: rgb(235, 14, 205);
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 1s ease, color 0.5s ease-out, border 1s ease-out; 
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Verificador de Números Primos</h1>
+        <p>Digite um número inteiro:</p>
+        <!-- Campo de entrada de texto -->
+        <input type="text" id="inputNumber">
+        <!-- Botão que chama a função verificarPrimo() quando clicado -->
+        <button onclick="verificarPrimo()">Verificar</button>
+        <!-- Parágrafo para exibir o resultado -->
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        // Função para verificar se um número é primo
+        function isPrimo(numero) {
+            if (numero <= 1) {
+                return false;
+            }
+            for (let i = 2; i < numero; i++) {
+                if (numero % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Função chamada quando o botão "Verificar" é clicado
+        function verificarPrimo() {
+            // Obter o elemento de entrada de texto
+            const input = document.getElementById('inputNumber');
+            // Obter o elemento onde o resultado será exibido
+            const resultado = document.getElementById('resultado');
+            // Converter o valor do campo de entrada em um número inteiro
+            const numero = parseInt(input.value);
+
+            // Verificar se o valor é um número
+            if (isNaN(numero)) {
+                resultado.textContent = 'Por favor, digite um número válido.';
+            } else {
+                // Chamar a função isPrimo para verificar se o número é primo
+                if (isPrimo(numero)) {
+                    resultado.textContent = `${numero} é um número primo.`;
+                } else {
+                    resultado.textContent = `${numero} não é um número primo.`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
